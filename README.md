@@ -4,7 +4,7 @@ Part of the [commitizen](https://github.com/commitizen/cz-cli) family. Prompts f
 
 ## Configuration
 
-## Rules for release.config.js
+### Rules for release.config.js
 
 Using the semantic-release commit-analyzer plugin, add this to config:
 
