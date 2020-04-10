@@ -22,7 +22,7 @@ Using the semantic-release commit-analyzer plugin, add this to config:
 
 ### package.json
 
-Like commitizen, you specify the configuration of cz-conventional-changelog through the package.json's `config.commitizen` key.
+Like commitizen, you specify the configuration of cz-conventional-changelog-bizone through the package.json's `config.commitizen` key.
 
 ```json5
 {
