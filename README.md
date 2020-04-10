@@ -58,4 +58,4 @@ The following environment varibles can be used to override any default configura
 
 If using the [commitlint](https://github.com/conventional-changelog/commitlint) js library, the "maxHeaderWidth" configuration property will default to the configuration of the "header-max-length" rule instead of the hard coded value of 100. This can be ovewritten by setting the 'maxHeaderWidth' configuration in package.json or the CZ_MAX_HEADER_WIDTH environment variable.
 
-Made with 🍺,😭 and 🤣 by BI.ZONE frontend team
+Made with 🍺, 😭 and 🤣 by BI.ZONE frontend team
