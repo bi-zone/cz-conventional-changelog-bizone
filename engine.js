@@ -64,12 +64,6 @@ var objectMap = (object, mapFn) => {
   });
 };
 
-var filter = function (array) {
-  return array.filter(function (x) {
-    return x;
-  });
-};
-
 var headerLength = function (answers) {
   return (
     answers.ticket.length +
@@ -101,7 +95,6 @@ var filterSubject = function (subject) {
 // fine.
 module.exports = function (options) {
   var types = options.types;
-  console.log('🐸 Pepe said: types', types);
 
   var length = longest(Object.keys(types)).length + 1;
   var choices = objectMap(types, function (type, key) {
@@ -111,7 +104,6 @@ module.exports = function (options) {
       value: key,
     };
   });
-  console.log('🐸 Pepe said: choices -> choices', choices);
 
   return {
     // When a user runs `git cz`, prompter will
@@ -152,16 +144,6 @@ module.exports = function (options) {
           message: "Select the type of change that you're committing:",
           choices: choices,
           default: options.defaultType,
-        },
-        {
-          type: 'input',
-          name: 'scope',
-          message:
-            'What is the scope of this change (e.g. feature, component, filename, etc): (press enter to skip)',
-          default: options.defaultScope,
-          filter: function (value) {
-            return value.trim().toLowerCase();
-          },
         },
         {
           type: 'input',
@@ -216,7 +198,7 @@ module.exports = function (options) {
           name: 'breakingBody',
           default: '-',
           message:
-            'A BREAKING CHANGE commit requires a body. Please enter a longer description of the commit itself:\n',
+            'A BREAKING CHANGE commit requires a body. Please enter a longer description of the commit:\n',
           when: function (answers) {
             return answers.isBreaking && !answers.body;
           },
@@ -234,34 +216,6 @@ module.exports = function (options) {
           when: function (answers) {
             return answers.isBreaking;
           },
-        },
-
-        {
-          type: 'confirm',
-          name: 'isIssueAffected',
-          message: 'Does this change affect any open issues?',
-          default: options.defaultIssues ? true : false,
-        },
-        {
-          type: 'input',
-          name: 'issuesBody',
-          default: '-',
-          message:
-            'If issues are closed, the commit requires a body. Please enter a longer description of the commit itself:\n',
-          when: function (answers) {
-            return (
-              answers.isIssueAffected && !answers.body && !answers.breakingBody
-            );
-          },
-        },
-        {
-          type: 'input',
-          name: 'issues',
-          message: 'Add issue references (e.g. "fix #123", "re #123".):\n',
-          when: function (answers) {
-            return answers.isIssueAffected;
-          },
-          default: options.defaultIssues ? options.defaultIssues : undefined,
         },
       ]).then(function (answers) {
         var wrapOptions = {
@@ -292,7 +246,13 @@ module.exports = function (options) {
 
         var issues = answers.issues ? wrap(answers.issues, wrapOptions) : false;
 
-        commit(filter([head, body, breaking, issues]).join('\n\n'));
+        commit(
+          [head, body, breaking, issues]
+            .filter(function (x) {
+              return x;
+            })
+            .join('\n\n')
+        );
       });
     },
   };

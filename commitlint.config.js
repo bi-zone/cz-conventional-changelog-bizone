@@ -1,3 +1,4 @@
+/* eslint-disable functional/immutable-data */
 /* eslint-disable no-magic-numbers */
 module.exports = {
   plugins: ['commitlint-plugin-jira-rules'],
@@ -20,8 +21,8 @@ module.exports = {
         'pascal-case', // PascalCase
         'sentence-case', // Sentence case
         'snake-case', // snake_case
-        'start-case' // Start Case
-      ]
+        'start-case', // Start Case
+      ],
     ],
     'subject-case': [
       2,
@@ -34,8 +35,8 @@ module.exports = {
         'pascal-case', // PascalCase
         'sentence-case', // Sentence case
         'snake-case', // snake_case
-        'start-case' // Start Case
-      ]
-    ]
-  }
+        'start-case', // Start Case
+      ],
+    ],
+  },
 };
