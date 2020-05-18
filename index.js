@@ -1,3 +1,4 @@
+/* eslint-disable functional/immutable-data */
 /* eslint-disable global-require */
 /* eslint-disable no-empty */
 /* eslint-disable vars-on-top */
@@ -8,6 +9,7 @@
 'format cjs';
 
 var configLoader = require('commitizen').configLoader;
+
 var engine = require('./engine');
 var conventionalCommitTypes = require('./types');
 

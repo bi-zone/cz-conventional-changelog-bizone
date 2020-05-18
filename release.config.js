@@ -1,3 +1,4 @@
+/* eslint-disable functional/immutable-data */
 /* eslint-disable no-template-curly-in-string */
 
 const releaseNotesGeneratorOptions = {
@@ -53,7 +54,7 @@ const releaseNotesGeneratorOptions = {
         }
       }
 
-      commit.references = commit.references.filter(reference => {
+      commit.references = commit.references.filter((reference) => {
         if (issues.indexOf(reference.issue) === -1) {
           return true;
         }
@@ -62,8 +63,8 @@ const releaseNotesGeneratorOptions = {
       });
 
       return commit;
-    }
-  }
+    },
+  },
 };
 
 const verifyConditions = [
@@ -74,19 +75,19 @@ const verifyConditions = [
     {
       assets: ['package.json', 'CHANGELOG.md'],
       message:
-        'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
-    }
+        'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+    },
   ],
-  '@semantic-release/github'
+  '@semantic-release/github',
 ];
 const analyzeCommits = [
   [
     '@semantic-release/commit-analyzer',
     {
       preset: 'angular',
-      releaseRules: './rules.js'
-    }
-  ]
+      releaseRules: './rules.js',
+    },
+  ],
 ];
 const generateNotes = ['@semantic-release/release-notes-generator'];
 const prepare = [
@@ -97,9 +98,9 @@ const prepare = [
     {
       assets: ['package.json', 'CHANGELOG.md'],
       message:
-        'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
-    }
-  ]
+        'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+    },
+  ],
 ];
 
 const publish = ['@semantic-release/npm', '@semantic-release/github'];
@@ -120,5 +121,5 @@ module.exports = {
   publish,
   fail,
   success,
-  addChannel
+  addChannel,
 };
