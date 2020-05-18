@@ -19,7 +19,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">= 12"
+    "node": "13.9.0"
   },
   "author": "Jim Cummins. fork by Sergio Nikolaev <jimthedev@gmail.com>",
   "license": "MIT",
