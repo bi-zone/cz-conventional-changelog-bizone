@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/bi-zone/cz-conventional-changelog-bizone/compare/v1.0.1...v1.0.2) (2020-05-18)
+
+
+### Bug Fixes
+
+* [MASTER-001] npm fix ([aa03ae7](https://github.com/bi-zone/cz-conventional-changelog-bizone/commit/aa03ae7f83dd318fca39dfe3bb2d4879d9e44594))
+* [MASTER-001] removed some bloat steps ([bf3c17e](https://github.com/bi-zone/cz-conventional-changelog-bizone/commit/bf3c17e1d1da179009aaec761d48e6f57314cc0d))
+
 ## [1.0.1](https://github.com/bi-zone/cz-conventional-changelog-bizone/compare/v1.0.0...v1.0.1) (2020-04-10)
 
 
