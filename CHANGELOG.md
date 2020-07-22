@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/bi-zone/cz-conventional-changelog-bizone/compare/v1.0.2...v1.0.3) (2020-07-22)
+
+
+### Bug Fixes
+
+* [MASTER-001] node ver fix ([7a89582](https://github.com/bi-zone/cz-conventional-changelog-bizone/commit/7a895829b2221e70fd57227c0f047715033c4fd1))
+* [MASTER-001] node ver fix ([0cc8efc](https://github.com/bi-zone/cz-conventional-changelog-bizone/commit/0cc8efc962721ec9c8c0119418d9baf542933a29))
+
 ## [1.0.2](https://github.com/bi-zone/cz-conventional-changelog-bizone/compare/v1.0.1...v1.0.2) (2020-05-18)
 
 
